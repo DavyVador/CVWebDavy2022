@@ -1,0 +1,287 @@
+@font-face {
+    font-family: font1;
+    src: url(./fonts/MontserratAlternates-Light.ttf);
+}
+
+@font-face {
+    font-family: font2;
+    src: url(./fonts/MontserratAlternates-Regular.ttf);
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: font1;
+    font-size: 2em;
+    color: white;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 1;
+    background-color: black;
+    /* height: 50px; */
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0 85px;
+    width: 100%;
+}
+
+.navbarlinks {
+    font-size: 0.84em;
+    color: white;
+    margin-left: 20px;
+}
+
+.navbarlinksgrey {
+    font-size: 0.84em;
+    color: #666666;
+    margin-left: 20px;
+}
+
+/* .DD {
+    font-size: 0.54em;
+    width: 70%;
+} */
+
+#contener {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px 85px;
+    height: 100vh;    
+    font-family: font1;
+}
+
+h1 {
+    font-family: font2;
+    font-size: 2em;
+}
+
+.texttaf {
+    font-size: 1.3em;
+}
+
+.accroche {
+    font-family: font2;
+    padding-top: 88px;
+}
+
+.pictos:hover {
+    opacity: 0.5;
+}
+
+.blocs {
+    /* border: 1px solid black; */
+    position: relative;
+    height: 33%;
+}
+
+.blocs:nth-child(1) {
+    flex: 4 1 70%;
+}
+
+.blocs:nth-child(2) {
+    flex: 1 1 30%;
+    text-align: right;
+}
+
+.blocs:nth-child(3) {
+    flex: 4 1 100%;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.blocs:nth-child(4) {
+    /* flex: 1 1 20%; */
+    padding-top: 175px;
+}
+
+.blocs:nth-child(5) {
+    flex: 1 1 20%;
+    padding-top: 157px;
+    padding-left: 350px;
+}
+
+/* Page_Portfolio */
+
+.slider {
+    height: 100vh;
+    position: relative;
+}
+
+.slider img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.slider img.active {
+    opacity: 1;
+}
+
+.suivant, .precedent {
+    color: white;
+    font-size: 6rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.suivant {
+    right: 1rem;
+}
+
+.precedent {
+    left: 1rem;
+}
+
+/* Page_Connaissances */
+
+.clic {
+    /* border: 1px solid black; */
+    color:#2B3183;
+    font-size:20px;
+    margin-left: 35px;
+}
+
+summary:hover {
+    cursor: pointer;
+}
+
+.zoneAafficher{
+    color:#666666;
+    font-size:15px;
+    margin-left: 18px;
+    padding-top: 5px; 
+}
+
+/* Responsive */
+
+@media all and (min-width: 1650px) and (max-width: 1750px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .texttaf {
+        font-size: 1em;
+    }
+
+    .logoDD {
+        width: 30%;
+    }
+
+    .accroche {
+        padding-top: 90px;
+    }
+
+    .blocs:nth-child(5) {
+        padding-left: 200px;
+    }
+}
+
+@media all and (min-width: 1360px) and (max-width: 1650px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .texttaf {
+        font-size: 1em;
+    }
+
+    .logoDD {
+        width: 35%;
+    }
+
+    .accroche {
+        padding-top: 90px;
+    }
+
+    .blocs:nth-child(5) {
+        padding-left: 80px;
+    }
+    
+    .pictos {
+        width: 80%;
+    }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1360px) {
+    h1 {
+        font-size: 1.4em;
+    }
+
+    .texttaf {
+        font-size: 1em;
+    }
+
+    .logoDD {
+        width: 35%;
+    }
+
+    .blocs:nth-child(5) {
+        padding-left: 60px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    h1 {
+        font-size: 1.1em;
+    }
+
+    .texttaf {
+        font-size: 0.9em;
+    }
+
+    .logoDD {
+        width: 32%;
+    }
+
+    .accroche {
+        padding: 10px;
+    }
+
+    .blocs:nth-child(5) {
+        padding-left: 150px;
+    }
+    
+    .pictos {
+        width: 80%;
+    }
+
+    .blocs:nth-child(5) {
+        padding-left: 100px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    /* h1 {
+        font-size: 1.4em;
+    } */
+
+    .texttaf {
+        font-size: 0.8em;
+    }
+
+    .accroche {
+        padding-top: 30px;
+    }
+}
