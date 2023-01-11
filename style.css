@@ -1,0 +1,417 @@
+@font-face {
+    font-family: font1;
+    src: url(./fonts/MontserratAlternates-Light.ttf);
+}
+
+@font-face {
+    font-family: font2;
+    src: url(./fonts/MontserratAlternates-Regular.ttf);
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    font-family: font1;
+    font-size: 2em;
+    color: white;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 1;
+    background-color: black;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0 85px;
+    width: 100%;
+}
+
+.navbarlinks {
+    font-size: 0.84em;
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.navbarlinksgrey {
+    font-size: 0.84em;
+    color: #666666;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+#contener {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px 85px;
+    height: 100vh;    
+    font-family: font1;
+}
+
+/* Animation background */
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #333;
+}
+
+section h2 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    line-height: 100vh;
+    font-size: 10vw;
+    font-weight: 700;
+}
+
+.logoDD {
+    max-width: 500px;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.banner .blocks {
+    position: relative;
+    display: block;
+    width: 5vw;
+    height: 5vh;
+    animation: animate 0.75s ease-in-out forwards;
+}
+
+.banner .blocks:nth-child(even) {
+    animation: animate 1s ease-in-out forwards;
+}
+.banner .blocks:nth-child(7n+3) {
+    animation: animate 2.5s ease-in-out forwards;
+}
+.banner .blocks:nth-child(7n+7) {
+    animation: animate 1.5s ease-in-out forwards;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        background: url(./visuels/1Road.jpg);
+        background-position: center;
+        background-attachment: fixed;
+    }
+    100% {
+        opacity: 1;
+        background: url(./visuels/1Road.jpg);
+        background-position: center;
+        background-attachment: fixed;
+    }
+}
+/* Fin d'animation background */
+
+.height33 {
+    height: 33%;
+}
+
+.DD {
+    position: relative;
+    animation: animate2 3s ease-in-out forwards;
+}
+
+@keyframes animate2 {
+    0% {
+        opacity: 0;
+        transform: translateX(800px);
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+h1 {
+    position: relative;
+    font-family: font2;
+    font-size: 2em;
+    top: 0;
+    margin: 0;
+    animation: animate3 3s ease-in-out forwards;
+}
+
+.texttaf {
+    position: relative;
+    font-family: font1;
+    font-size: 0.9em;
+    top: 0;
+    margin: 0;
+    animation: animate3 4s ease-in-out forwards;
+}
+
+.texttaf2 {
+    position: relative;
+    font-family: font1;
+    font-size: 0.9em;
+    margin: 0;
+    animation: animate3 5s ease-in-out forwards;
+}
+
+@keyframes animate3 {
+    0% {
+        opacity: 0;
+        transform: translateX(-800px);
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.accroche {
+    position: relative;
+    font-family: font2;
+    top: 60%;
+    transform: translateY(-50%);
+    animation: animate4 5s ease-in-out forwards;
+}
+
+@keyframes animate4 {
+    0% {
+        opacity: 0;
+        transform: translateX(-90px);
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.footer {
+    position: relative;
+    top: 80%;
+    transform: translateY(-50%);
+    animation: animate5 6s ease-in-out forwards;
+}
+
+@keyframes animate5 {
+    0% {
+        opacity: 0;
+        transform: translateX(90px);
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.pictos:hover {
+    opacity: 0.5;
+}
+
+/* Page_Portfolio */
+
+.slider {
+    height: 100vh;
+    position: relative;
+}
+
+.slider img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.slider img.active {
+    opacity: 1;
+}
+
+.suivant, .precedent {
+    color: white;
+    font-size: 6rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.suivant {
+    right: 1rem;
+}
+
+.precedent {
+    left: 1rem;
+}
+
+/* Page_Connaissances */
+
+.clic {
+    /* border: 1px solid black; */
+    color:#2B3183;
+    font-size:20px;
+    margin-left: 35px;
+}
+
+summary:hover {
+    cursor: pointer;
+}
+
+.zoneAafficher{
+    color:#666666;
+    font-size:15px;
+    margin-left: 18px;
+    padding-top: 5px; 
+}
+
+/* Responsive
+
+@media all and (min-width: 1650px) and (max-width: 1750px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .texttaf {
+        font-size: 1em;
+    }
+
+    .logoDD {
+        width: 30%;
+    }
+
+    .accroche {
+        padding-top: 90px;
+    }
+
+    .blocs:nth-child(5) {
+        padding-left: 200px;
+    }
+}
+
+@media all and (min-width: 1360px) and (max-width: 1650px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .texttaf {
+        font-size: 1em;
+    }
+
+    .logoDD {
+        width: 35%;
+    }
+
+    .accroche {
+        padding-top: 90px;
+    }
+
+    .blocs:nth-child(5) {
+        padding-left: 80px;
+    }
+    
+    .pictos {
+        width: 80%;
+    }
+}
+
+@media all and (min-width: 1280px) and (max-width: 1360px) {
+    h1 {
+        font-size: 1.4em;
+    }
+
+    .texttaf {
+        font-size: 1em;
+    }
+
+    .logoDD {
+        width: 35%;
+    }
+
+    .blocs:nth-child(5) {
+        padding-left: 60px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    h1 {
+        font-size: 1.1em;
+    }
+
+    .texttaf {
+        font-size: 0.9em;
+    }
+
+    .logoDD {
+        width: 32%;
+    }
+
+    .accroche {
+        padding: 10px;
+    }
+
+    .blocs:nth-child(5) {
+        padding-left: 150px;
+    }
+    
+    .pictos {
+        width: 80%;
+    }
+
+    .blocs:nth-child(5) {
+        padding-left: 100px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    h1 {
+        font-size: 1.4em;
+    }
+
+    .texttaf {
+        font-size: 0.8em;
+    }
+
+    .accroche {
+        padding-top: 30px;
+    }
+} */

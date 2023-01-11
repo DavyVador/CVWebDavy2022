@@ -1,0 +1,57 @@
+// Animation background
+const banner = document.getElementsByClassName('banner')[0];
+const blocks = document.getElementsByClassName('blocks');
+
+for (var i = 1; i < 400; i++) {
+    banner.innerHTML += "<div class='blocks'></div>";
+    blocks[i].style.animationDelay = `${i * 0.01}s`;
+}
+
+// Carroussel
+let img__slider = document.getElementsByClassName('img__slider');
+
+let etape = 0;
+
+let nbr__img = img__slider.length;
+
+let precedent = document.querySelector('.precedent');
+let suivant = document.querySelector('.suivant');
+
+function enleverActiveImages() {
+    for(let i = 0 ; i < nbr__img ; i++) {
+        img__slider[i].classList.remove('active');
+    }
+}
+
+suivant.addEventListener('click', function() {
+    etape++;
+    if(etape >= nbr__img) {
+        etape = 0;
+    }
+    enleverActiveImages();
+    img__slider[etape].classList.add('active');
+    clearInterval(interval)
+    interval = setInterval(intervalFunction, 5000)
+})
+
+precedent.addEventListener('click', function() {
+    etape--;
+    if(etape < 0) {
+        etape = nbr__img - 1;
+    }
+    enleverActiveImages();
+    img__slider[etape].classList.add('active');
+    clearInterval(interval)
+    interval = setInterval(intervalFunction, 5000)
+})
+
+let intervalFunction  = () =>  {
+    etape++;
+    if(etape >= nbr__img) {
+        etape = 0;
+    }
+    enleverActiveImages();
+    img__slider[etape].classList.add('active');
+}
+
+let interval = setInterval(intervalFunction, 15000)
