@@ -18,9 +18,9 @@
 }
 
 body {
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
     font-family: font1;
     font-size: 2em;
     color: white;
@@ -30,7 +30,6 @@ body {
     position: fixed;
     z-index: 1;
     background-color: black;
-    /* height: 50px; */
     left: 0px;
     top: 0px;
     display: flex;
@@ -44,18 +43,15 @@ body {
     font-size: 0.84em;
     color: white;
     margin-left: 20px;
+    text-decoration: none;
 }
 
 .navbarlinksgrey {
     font-size: 0.84em;
     color: #666666;
     margin-left: 20px;
+    text-decoration: none;
 }
-
-/* .DD {
-    font-size: 0.54em;
-    width: 70%;
-} */
 
 #contener {
     display: flex;
@@ -65,54 +61,179 @@ body {
     font-family: font1;
 }
 
+/* Animation background */
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #333;
+}
+
+section h2 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    line-height: 100vh;
+    font-size: 10vw;
+    font-weight: 700;
+}
+
+.logoDD {
+    max-width: 500px;
+    height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.banner .blocks {
+    position: relative;
+    display: block;
+    width: 5vw;
+    height: 5vh;
+    animation: animate 0.75s ease-in-out forwards;
+}
+
+.banner .blocks:nth-child(even) {
+    animation: animate 1s ease-in-out forwards;
+}
+.banner .blocks:nth-child(7n+3) {
+    animation: animate 2.5s ease-in-out forwards;
+}
+.banner .blocks:nth-child(7n+7) {
+    animation: animate 1.5s ease-in-out forwards;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        background: url(./visuels/1Road.jpg);
+        background-position: center;
+        background-attachment: fixed;
+    }
+    100% {
+        opacity: 1;
+        background: url(./visuels/1Road.jpg);
+        background-position: center;
+        background-attachment: fixed;
+    }
+}
+/* Fin d'animation background */
+
+.height33 {
+    height: 33%;
+}
+
+.DD {
+    position: relative;
+    animation: animate2 3s ease-in-out forwards;
+}
+
+@keyframes animate2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-1000px);
+    }
+    50% {
+        opacity: 0.25;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    80% {
+        transform: translateX(30px);
+    }
+    85% {
+        transform: translateX(-30px);
+    }
+    90% {
+        transform: translateX(20px);
+    }
+    95% {
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
 h1 {
+    position: relative;
     font-family: font2;
     font-size: 2em;
+    top: 0;
+    animation: animate3 3s ease-in-out forwards;
 }
 
 .texttaf {
+    position: relative;
+    font-family: font1;
     font-size: 1.3em;
+    top: 0;
+    animation: animate3 4s ease-in-out forwards;
+}
+
+@keyframes animate3 {
+    0% {
+        opacity: 0;
+        transform: translateX(1000px);
+    }
+    50% {
+        opacity: 0.25;
+    }
+    75% {
+        opacity: 0.5;
+    }
+    80% {
+        transform: translateX(-30px);
+    }
+    85% {
+        transform: translateX(30px);
+    }
+    90% {
+        transform: translateX(-20px);
+    }
+    95% {
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
 
 .accroche {
+    position: relative;
     font-family: font2;
-    padding-top: 80px;
+    top: 78%;
+    transform: translateY(-50%);
+}
+
+.footer {
+    position: relative;
+    top: 80%;
+    transform: translateY(-50%);
 }
 
 .pictos:hover {
     opacity: 0.5;
-}
-
-.blocs {
-    /* border: 1px solid black; */
-    position: relative;
-    height: 33%;
-}
-
-.blocs:nth-child(1) {
-    flex: 4 1 70%;
-}
-
-.blocs:nth-child(2) {
-    flex: 1 1 30%;
-    text-align: right;
-}
-
-.blocs:nth-child(3) {
-    flex: 4 1 100%;
-    text-align: center;
-    padding-top: 80px;
-}
-
-.blocs:nth-child(4) {
-    /* flex: 1 1 20%; */
-    padding-top: 175px;
-}
-
-.blocs:nth-child(5) {
-    flex: 1 1 20%;
-    padding-top: 157px;
-    padding-left: 350px;
 }
 
 /* Page_Portfolio */
@@ -174,7 +295,7 @@ summary:hover {
     padding-top: 5px; 
 }
 
-/* Responsive */
+/* Responsive
 
 @media all and (min-width: 1650px) and (max-width: 1750px) {
     h1 {
@@ -273,9 +394,9 @@ summary:hover {
 }
 
 @media screen and (max-width: 1100px) {
-    /* h1 {
+    h1 {
         font-size: 1.4em;
-    } */
+    }
 
     .texttaf {
         font-size: 0.8em;
@@ -284,4 +405,4 @@ summary:hover {
     .accroche {
         padding-top: 30px;
     }
-}
+} */
