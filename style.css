@@ -17,12 +17,15 @@
     text-decoration: none;
 }
 
+html {
+    --res: calc(0.01 * 15vmin);
+}
+
 body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     font-family: font1;
-    font-size: 2em;
     color: white;
 }
 
@@ -50,7 +53,7 @@ ul {
 
 .navbar .navlinks ul li a {
     font-family: font1;
-    font-size: 0.84em;
+    font-size: calc(20 * var(--res));
     color: white;
     margin-left:20px;
     text-decoration: none;
@@ -67,7 +70,6 @@ ul {
     padding: 100px 85px;
     height: 100vh;    
     font-family: font1;
-    cursor: pointer;
 }
 
 /* Animation background */
@@ -84,12 +86,10 @@ section h2 {
     height: 100vh;
     text-align: center;
     line-height: 100vh;
-    font-size: 10vw;
-    font-weight: 700;
 }
 
 .logoDD {
-    max-width: 500px;
+    width:  calc(400 * var(--res));
     height: 100vh;
     position: absolute;
     top: 50%;
@@ -150,8 +150,8 @@ section h2 {
 .navbar .containner {
     display: none;
     position: absolute;
-    top: 0;
-    right: 10px;
+    top: 0px;
+    right: 0px;
 }
 
 svg {
@@ -205,19 +205,33 @@ svg {
   }
 /* Fin animation burger */
 
-.height33 {
+.container-fluid {
+    position: relative;
+}
+
+.Bheight {
+    position: relative;
     height: 33%;
+}
+
+.Bheight2 {
+    height: 33%;
+}
+
+.Bheight3 {
+    height: 40%;
 }
 
 .DD {
     position: relative;
+    width: 20%;
     animation: animate2 3s ease-in-out forwards;
 }
 
 @keyframes animate2 {
     0% {
         opacity: 0;
-        transform: translateX(800px);
+        transform: translateX(200px);
     }
     75% {
         opacity: 0;
@@ -228,10 +242,15 @@ svg {
     }
 }
 
+.text-end {
+    position: relative;
+    width: 80%;
+}
+
 h1 {
     position: relative;
     font-family: font2;
-    font-size: 2em;
+    font-size: calc(30 * var(--res));
     top: 0;
     margin: 0;
     animation: animate3 3s ease-in-out forwards;
@@ -240,7 +259,7 @@ h1 {
 .texttaf {
     position: relative;
     font-family: font1;
-    font-size: 0.9em;
+    font-size: calc(20 * var(--res));
     top: 0;
     margin: 0;
     animation: animate3 4s ease-in-out forwards;
@@ -249,7 +268,7 @@ h1 {
 .texttaf2 {
     position: relative;
     font-family: font1;
-    font-size: 0.9em;
+    font-size: calc(20 * var(--res));
     margin: 0;
     animation: animate3 5s ease-in-out forwards;
 }
@@ -257,7 +276,7 @@ h1 {
 @keyframes animate3 {
     0% {
         opacity: 0;
-        transform: translateX(-800px);
+        transform: translateX(-100px);
     }
     75% {
         opacity: 0;
@@ -271,15 +290,15 @@ h1 {
 .accroche {
     position: relative;
     font-family: font2;
-    top: 60%;
-    transform: translateY(-50%);
-    animation: animate4 5s ease-in-out forwards;
+    font-size: calc(20 * var(--res));
+    justify-content: center;
+    animation: animate4 4s ease-in-out forwards;
 }
 
 @keyframes animate4 {
     0% {
         opacity: 0;
-        transform: translateX(-90px);
+        transform: translateX(-100px);
     }
     75% {
         opacity: 0;
@@ -292,17 +311,15 @@ h1 {
 
 .footer {
     position: relative;
-    top: 80%;
-    transform: translateY(-50%);
-    animation: animate5 6s ease-in-out forwards;
+    animation: animate5 4s ease-in-out forwards;
 }
 
 @keyframes animate5 {
     0% {
         opacity: 0;
-        transform: translateX(90px);
+        transform: translateX(20px);
     }
-    75% {
+    90% {
         opacity: 0;
     }
     100% {
@@ -310,6 +327,12 @@ h1 {
         transform: translateX(0px);
     }
 }
+
+.pictos {
+    min-width: 40px;
+    max-width: 70px;
+}
+
 .pictos:hover {
     opacity: 0.5;
 }
@@ -323,8 +346,8 @@ h1 {
 
 .slider img {
     object-fit: cover;
-    height: 100%;
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -338,9 +361,9 @@ h1 {
 
 .suivant, .precedent {
     color: white;
-    font-size: 6rem;
+    font-size: 4rem;
     position: absolute;
-    top: 50%;
+    top: 90%;
     transform: translateY(-50%);
     cursor: pointer;
 }
@@ -356,9 +379,8 @@ h1 {
 /* Page_Connaissances */
 
 .clic {
-    /* border: 1px solid black; */
     color:#2B3183;
-    font-size:20px;
+    font-size: calc(15 * var(--res));
     margin-left: 35px;
 }
 
@@ -368,14 +390,42 @@ summary:hover {
 
 .zoneAafficher{
     color:#666666;
-    font-size:15px;
+    font-size: calc(12 * var(--res));
     margin-left: 18px;
     padding-top: 5px; 
 }
 
 /* Responsive */
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 1001px) and (max-width: 1350px) {
+    .DD {
+        width: 30%;
+    }
+
+    .text-end {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+    #contener {
+        padding: 80px 10px;
+    }
+
+    .DD {
+        width: 25%;
+    }
+
+    .text-end {
+        width: 70%;
+    }
+
+    .zoneAafficher{
+        margin-left: 9px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 600px) {
     .navbar {
         padding: 0;
     }
@@ -411,155 +461,30 @@ summary:hover {
 
     .navbar .navlinks ul li {
         margin: 25px 0;
-        font-size: 1.2em;
+    }
+
+    .navbar .navlinks ul li a {
+        margin-left: 0;
     }
 
     #contener {
-        padding: 70px 10px;
+        padding: 80px 10px;
     }
 
     .logoDD {
-        max-width: 10px;
+        max-width: 250px;
         height: 100vh;
-        top: 50%;
-        left: 25%;
     }
 
     .DD {
-        max-width: 40%;
-    }
-
-    h1 {
-        font-size: 1em;
-        text-align: right;
+        width: 35%;
     }
 
     .text-end {
-        width: 60%;
-    }
-    
-    .texttaf {
-        font-size: 0.7em;
+        width: 65%;
     }
 
-    .texttaf2 {
-        font-size: 0.7em;
-    }
-
-    .accroche {
-        font-size: 0.65em;
-    }
-    
-}
-
-/* Responsive
-
-@media all and (min-width: 1650px) and (max-width: 1750px) {
-    h1 {
-        font-size: 1.5em;
-    }
-
-    .texttaf {
-        font-size: 1em;
-    }
-
-    .logoDD {
-        width: 30%;
-    }
-
-    .accroche {
-        padding-top: 90px;
-    }
-
-    .blocs:nth-child(5) {
-        padding-left: 200px;
+    .zoneAafficher{
+        margin-left: 8px;
     }
 }
-
-@media all and (min-width: 1360px) and (max-width: 1650px) {
-    h1 {
-        font-size: 1.5em;
-    }
-
-    .texttaf {
-        font-size: 1em;
-    }
-
-    .logoDD {
-        width: 35%;
-    }
-
-    .accroche {
-        padding-top: 90px;
-    }
-
-    .blocs:nth-child(5) {
-        padding-left: 80px;
-    }
-    
-    .pictos {
-        width: 80%;
-    }
-}
-
-@media all and (min-width: 1280px) and (max-width: 1360px) {
-    h1 {
-        font-size: 1.4em;
-    }
-
-    .texttaf {
-        font-size: 1em;
-    }
-
-    .logoDD {
-        width: 35%;
-    }
-
-    .blocs:nth-child(5) {
-        padding-left: 60px;
-    }
-}
-
-@media screen and (max-width: 1280px) {
-    h1 {
-        font-size: 1.1em;
-    }
-
-    .texttaf {
-        font-size: 0.9em;
-    }
-
-    .logoDD {
-        width: 32%;
-    }
-
-    .accroche {
-        padding: 10px;
-    }
-
-    .blocs:nth-child(5) {
-        padding-left: 150px;
-    }
-    
-    .pictos {
-        width: 80%;
-    }
-
-    .blocs:nth-child(5) {
-        padding-left: 100px;
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    h1 {
-        font-size: 1.4em;
-    }
-
-    .texttaf {
-        font-size: 0.8em;
-    }
-
-    .accroche {
-        padding-top: 30px;
-    }
-} */
